@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/boardschema?serverTimezone=Asia/Seoul
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-2
+      credentials:
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
+      sqs:
+        queue-name: ${AWS_QUEUE_NAME}
